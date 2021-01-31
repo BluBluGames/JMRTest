@@ -1,0 +1,7 @@
+1 public static IEnumerable<IEnumerable<string>>
+2 OnlyBigCollections(List<IEnumerable<string>> toFilter)
+3 {
+4 Func<IEnumerable<string>, bool> predicate =
+5 list => list.ToList().Count() > 5;
+6
+7 return toFilter.Where(predicate);
